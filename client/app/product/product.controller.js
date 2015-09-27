@@ -23,11 +23,6 @@ angular.module('meanordersApp')
       $http.delete('/api/products/' + product._id);
     };
 
-    
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('product');
-    });
-    
     $scope.viewProduct = function(product) {
             $location.path('/product/'+product._id+'/view');
     };
@@ -43,8 +38,18 @@ angular.module('meanordersApp')
       });
       
      
-  })
-  .controller('ProductEditCtrl',function ($scope, $state, $http,  $location, $stateParams, Auth, User) {  
+  }).controller('ProductCreateController',function($scope,$state,$http,$stateParams, $location){
+
+    $scope.product= {};
+
+    $scope.addProduct = function(){
+        
+        $http.post('/api/products', $scope.product).success(function(product, $state) {
+            $location.path('/product');
+        }
+    )};
+
+  }).controller('ProductEditCtrl',function ($scope, $state, $http,  $location, $stateParams, Auth, User) {  
 
    $scope.product = '';
 

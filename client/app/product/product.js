@@ -15,6 +15,10 @@ angular.module('meanordersApp')
         url: '/product/:id/edit',
         templateUrl: 'app/product/product-edit.html',
         controller: 'ProductEditCtrl'
+      }).state('newProduct',{
+        url:'/product/new',
+        templateUrl:'app/product/product-add.html',
+        controller:'ProductCreateController'
       });
   }).run(function($state) {
   	$state.go('product'); //make a transition to movies state when app starts
