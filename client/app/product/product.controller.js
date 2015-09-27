@@ -30,26 +30,31 @@ angular.module('meanordersApp')
   })
   .controller('ProductViewCtrl',function ($scope, $http, $stateParams, Auth, User) {  
 
-      $scope.product=$http.get('/api/products/' + product._id );
-      window.alert("test");
+      $scope.product = '';
 
-    
+      $http.get('/api/products/' + $stateParams.id).success(function(product) {
+          $scope.product = product;
+      });
+   
   })
-  .controller('ProductEditCtrl',function ($scope, $http, $stateParams, Auth, User) {  
+  .controller('ProductEditCtrl',function ($scope, $state, $http,  $location, $stateParams, Auth, User) {  
 
-   $scope.updateProduct=function(){
-        $scope.product.$update(function(){
-            $state.go('products');
-        });
-    };
+   $scope.product = '';
 
-    $scope.loadProduct=function(){
-        $scope.product=$http.get('/api/products/' + {id:$stateParams.id} );
-        /*Movie.get({id:$stateParams.id});*/
+   $scope.updateProduct = function(){
+        
+        $http.put('/api/products/' + $stateParams.id, $scope.product).success(function(product, $state) {
+            $location.path('/product');
+        }
+    )};
+
+    $scope.loadProduct = function(){
+          $http.get('/api/products/' + $stateParams.id).success(function(product) {
+          $scope.product = product;
+      });
     };
 
     $scope.loadProduct();
 
     
-  })
-  ;
+  });
