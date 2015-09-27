@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanordersApp')
-  .controller('ProductCtrl', function ($scope, $http, Auth, User) {
+  .controller('ProductCtrl', function ($scope, $http, Auth, User, $location) {
 
   	$scope.awesomeProducts = [];
 
@@ -27,6 +27,12 @@ angular.module('meanordersApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('product');
     });
+    
+    $scope.viewProduct = function(product) {
+            $location.path('/product/'+product._id+'/view');
+    };
+
+   
   })
   .controller('ProductViewCtrl',function ($scope, $http, $stateParams, Auth, User) {  
 
@@ -35,7 +41,8 @@ angular.module('meanordersApp')
       $http.get('/api/products/' + $stateParams.id).success(function(product) {
           $scope.product = product;
       });
-   
+      
+     
   })
   .controller('ProductEditCtrl',function ($scope, $state, $http,  $location, $stateParams, Auth, User) {  
 

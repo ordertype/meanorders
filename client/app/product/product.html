@@ -14,7 +14,7 @@
             </tr>
         </thead>
         <tbody>
-              <tr class="odd gradeX" ng-repeat="product in awesomeProducts">
+              <tr class="odd gradeX" ng-repeat="product in awesomeProducts" ng-click="viewProduct(product)">
                 <td>{{product.name}}</td>
                 <td>{{product.info}}</td>
                 <td ng-click="deleteProduct(product)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span>
