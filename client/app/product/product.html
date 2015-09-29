@@ -1,10 +1,19 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 
-
 <div class="container">
-
-  <a ui-sref="newProduct" class="btn-primary btn-lg nodecoration">Add New Product</a>
+    <tr>
+        <td><h3>All Products</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <a ui-sref="newProduct" class="btn-primary btn-lg nodecoration">Add New Product</a>
+        <td></td>
+    </tr>
+     <tr>
+        <td><h3> </h3></td>
+        <td></td>
+    </tr> 
   <div class="row">
     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
         <thead>
@@ -15,11 +24,13 @@
             </tr>
         </thead>
         <tbody>
-              <tr class="odd gradeX" ng-repeat="product in awesomeProducts" ng-click="viewProduct(product)">
+              <tr class="odd gradeX" ng-repeat="product in awesomeProducts" >
                 <td>{{product.name}}</td>
                 <td>{{product.info}}</td>
-                <td ng-click="deleteProduct(product)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span>
-                </td>  
+                <td>
+                    <a class="btn btn-primary" ng-click="viewProduct(product)">View</a>
+                    <a class="btn btn-danger"  ng-click="deleteProduct(product)">Delete</a>
+                </td>                               
               </tr>
 
         </tbody>

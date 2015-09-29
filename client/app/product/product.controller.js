@@ -1,42 +1,38 @@
 'use strict';
 
 angular.module('meanordersApp')
-  .controller('ProductCtrl', function ($scope, $http, Auth, User, $location) {
+  .controller('ProductCtrl', function ($scope, $http, Auth, User, $location, socket) {
 
   	$scope.awesomeProducts = [];
 
     $http.get('/api/products').success(function(awesomeProducts) {
       $scope.awesomeProducts = awesomeProducts;
-      //socket.syncUpdates('product', $scope.awesomeProducts);
+      socket.syncUpdates('product', $scope.awesomeProducts);
     });
 
-   
-    $scope.addProduct = function() {
-      if($scope.newProduct === '') {
-        return;
-      }
-      $http.post('/api/products', { name: $scope.newProduct });
-      $scope.newProduct = '';
-    };
-
     $scope.deleteProduct = function(product) {
-      $http.delete('/api/products/' + product._id);
-    };
-
+      $http.delete('/api/products/' + product._id).success(function(product, $state) {
+        $location.path('/product');
+        }
+     )};
+       
     $scope.viewProduct = function(product) {
-            $location.path('/product/'+product._id+'/view');
+       $location.path('/product/'+product._id+'/view');
     };
 
    
   })
-  .controller('ProductViewCtrl',function ($scope, $http, $stateParams, Auth, User) {  
+  .controller('ProductViewCtrl',function ($scope,$location,  $http, $stateParams, Auth, User) {  
 
       $scope.product = '';
 
       $http.get('/api/products/' + $stateParams.id).success(function(product) {
           $scope.product = product;
       });
-      
+  
+      $scope.cancel = function() {
+       $location.path('/product');
+    };    
      
   }).controller('ProductCreateController',function($scope,$state,$http,$stateParams, $location){
 
@@ -67,6 +63,12 @@ angular.module('meanordersApp')
     };
 
     $scope.loadProduct();
+    
+    $scope.cancel = function() {
+        $http.get('/api/products/' + $stateParams.id).success(function(product) {
+           $location.path('/product/'+product._id+'/view');
+      });
+    };
 
     
   });
