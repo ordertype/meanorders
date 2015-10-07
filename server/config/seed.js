@@ -34,6 +34,654 @@ Thing.find({}).remove(function() {
 
 Product.find({}).remove(function() {
   Product.create({
+    name : 'Champu1',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu2',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu3',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu4',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu5',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu6',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu7',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu8',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu9',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu10',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu11',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu12',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu13',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu14',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu15',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu16',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu17',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu18',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu19',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu20',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
+    name : 'Champu',
+    info : 'Champu anticaspa'
+  }, {
     name : 'Champu',
     info : 'Champu anticaspa'
   }, {

@@ -7,12 +7,12 @@ angular.module('meanordersApp')
 
     $http.get('/api/products').success(function(awesomeProducts) {
       $scope.awesomeProducts = awesomeProducts;
-      socket.syncUpdates('product', $scope.awesomeProducts);
+      
     });
 
-    $scope.deleteProduct = function(product) {
+    $scope.deleteProduct = function(product, index) {
       $http.delete('/api/products/' + product._id).success(function(product, $state) {
-        $location.path('/product');
+        $scope.awesomeProducts.splice(index,1);
         }
      )};
        
@@ -44,6 +44,10 @@ angular.module('meanordersApp')
             $location.path('/product');
         }
     )};
+    
+    $scope.cancel = function() {
+      $location.path('/product');
+    }
 
   }).controller('ProductEditCtrl',function ($scope, $state, $http,  $location, $stateParams, Auth, User) {  
 
