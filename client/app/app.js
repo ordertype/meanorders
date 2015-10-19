@@ -6,7 +6,10 @@ angular.module('meanordersApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.grid',
+  'ui.grid.pagination',
+  'ui.grid.selection'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

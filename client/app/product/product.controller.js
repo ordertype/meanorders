@@ -4,16 +4,39 @@ angular.module('meanordersApp')
   .controller('ProductCtrl', function ($scope, $http, Auth, User, $location, socket) {
 
   	$scope.awesomeProducts = [];
+    
+    $scope.productsGrid = {
+      enableFiltering: true,
+      enableSorting: true,
+      infiniteScrollRowsFromEnd: 40,
+      infiniteScrollUp: true,
+      infiniteScrollDown: true,
+      rowHeight: 40,
+      columnDefs: [
+        { name: 'Product',field: 'name' },
+        { name: 'Description',field: 'info' }, 
+        { name: 'Actions',
+            cellClass: 'ui-grid-vcenter',
+            enableColumnMenu: false,
+            enableFiltering: false,
+            enableSorting: false,
+            cellTemplate:'<button class="btn btn-primary" ng-click="grid.appScope.viewProduct(row.entity)">View</button> <button class="btn btn-danger" ng-click="grid.appScope.deleteProduct(row)">Delete</button>' }
+      ],
+      onRegisterApi: function( gridApi ) {
+        $scope.grid1Api = gridApi;
+      }
+    };    
 
     $http.get('/api/products').success(function(awesomeProducts) {
       $scope.awesomeProducts = awesomeProducts;
-      
+      $scope.productsGrid.data = awesomeProducts;
     });
 
-    $scope.deleteProduct = function(product, index) {
-      $http.delete('/api/products/' + product._id).success(function(product, $state) {
-        $scope.awesomeProducts.splice(index,1);
-        }
+    $scope.deleteProduct = function(product) {
+       var index = $scope.productsGrid.data.indexOf(product.entity);            
+       $http.delete('/api/products/' + product.entity._id).success(function(product, $state) {
+         $scope.productsGrid.data.splice(index, 1);
+       }
      )};
        
     $scope.viewProduct = function(product) {
