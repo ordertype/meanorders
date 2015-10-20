@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanordersApp')
-  .controller('ProductCtrl', function ($scope, $http, Auth, User, $location, socket) {
+  .controller('ProductCtrl', function ($scope, $http, Auth, User, $location, socket, Notification, dialogs) {
 
   	$scope.awesomeProducts = [];
     
@@ -33,14 +33,22 @@ angular.module('meanordersApp')
     });
 
     $scope.deleteProduct = function(product) {
-       var index = $scope.productsGrid.data.indexOf(product.entity);            
-       $http.delete('/api/products/' + product.entity._id).success(function(product, $state) {
-         $scope.productsGrid.data.splice(index, 1);
-       }
-     )};
+       var index = $scope.productsGrid.data.indexOf(product.entity);    
+       var productName = product.entity.name;
+       var dlg = dialogs.confirm();
+       dlg.result.then(function(btn){
+         $http.delete('/api/products/' + product.entity._id).success(function(product, $state) {
+            $scope.productsGrid.data.splice(index, 1);
+            Notification.success({message: 'Product ' + productName + ' Deleted', title: 'Delete operation'});
+          })
+       },function(btn){
+            Notification.success({message: 'Product ' + productName + ' Delete cancelled', title: 'Delete operation'});
+       });
+       };
        
     $scope.viewProduct = function(product) {
        $location.path('/product/'+product._id+'/view');
+       
     };
 
    
@@ -57,19 +65,27 @@ angular.module('meanordersApp')
        $location.path('/product');
     };    
      
-  }).controller('ProductCreateController',function($scope,$state,$http,$stateParams, $location){
+  }).controller('ProductCreateController',function($scope,$state,$http,$stateParams, $location,Notification, dialogs){
 
     $scope.product= {};
 
     $scope.addProduct = function(){
+      var productName = $scope.product.name;
+      var dlg = dialogs.confirm();
+       dlg.result.then(function(btn){
+         $http.post('/api/products', $scope.product).success(function(product, $state) {
+             Notification.success({message: 'Product ' + productName + ' created', title: 'Create operation'});
+             $location.path('/product');
+        })
+       },function(btn){
+            Notification.success({message: 'Product ' + productName + ' create cancelled', title: 'Create operation'});
+       });
         
-        $http.post('/api/products', $scope.product).success(function(product, $state) {
-            $location.path('/product');
-        }
-    )};
+        };
     
     $scope.cancel = function() {
       $location.path('/product');
+      Notification.success({message: 'Product create cancelled', title: 'Create operation'});
     }
 
   }).controller('ProductEditCtrl',function ($scope, $state, $http,  $location, $stateParams, Auth, User) {  
