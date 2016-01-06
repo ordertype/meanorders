@@ -28,7 +28,9 @@ ADD . /home/mean
 # Set development environment as default
 ENV NODE_ENV development
 
-# Port 3000 for server
+# Port 9000 for server
 # Port 35729 for livereload
-EXPOSE 3000 35729
+EXPOSE 9000 35729
+
+# Start the application
 CMD grunt serve
