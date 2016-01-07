@@ -29,8 +29,8 @@ ADD . /home/mean
 ENV NODE_ENV development
 
 # Port 9000 for server
-# Port 35729 for livereload
-EXPOSE 9000 35729
+# Port 5858 for debug w/nodemon
+EXPOSE 9000 5858 
 
 # Start the application
 CMD grunt serve
