@@ -57,12 +57,20 @@ angular.module('meanordersApp')
 
       $scope.product = '';
 
+
       $http.get('/api/products/' + $stateParams.id).success(function(product) {
           $scope.product = product;
+          $scope.actionScope = "Edit";
       });
   
       $scope.cancel = function() {
        $location.path('/product');
+      }; 
+      
+      $scope.updateProduct = function() {
+        $location.path('/product/'+$scope.product._id+'/edit');
+        $scope.edit = false;
+
     };    
      
   }).controller('ProductCreateController',function($scope,$state,$http,$stateParams, $location,Notification, dialogs){
@@ -92,16 +100,19 @@ angular.module('meanordersApp')
 
    $scope.product = '';
 
+   
+
    $scope.updateProduct = function(){
         
         $http.put('/api/products/' + $stateParams.id, $scope.product).success(function(product, $state) {
-            $location.path('/product');
+           // $location.path('/product');
         }
     )};
 
     $scope.loadProduct = function(){
           $http.get('/api/products/' + $stateParams.id).success(function(product) {
           $scope.product = product;
+          $scope.actionScope = "Save";
       });
     };
 

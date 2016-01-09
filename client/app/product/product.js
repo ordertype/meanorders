@@ -9,7 +9,7 @@ angular.module('meanordersApp')
         controller: 'ProductCtrl'
       }).state('viewProduct', {
         url: '/product/:id/view',
-        templateUrl: 'app/product/product-view.html',
+        templateUrl: 'app/product/product-edit.html',
         controller: 'ProductViewCtrl'
       }).state('editProduct', {
         url: '/product/:id/edit',
