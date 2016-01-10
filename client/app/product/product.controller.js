@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanordersApp')
-  .controller('ProductCtrl', function ($scope, $http, Auth, User, $location, socket, Notification, dialogs) {
+  .controller('ProductCtrl', function ($state, $scope, $http, Auth, User, $location, socket, Notification, dialogs) {
 
   	$scope.awesomeProducts = [];
     
@@ -47,81 +47,93 @@ angular.module('meanordersApp')
        };
        
     $scope.viewProduct = function(product) {
-       $location.path('/product/'+product._id+'/view');
-       
+       $state.go('viewProduct',{id: product._id});
+     
     };
 
    
   })
-  .controller('ProductViewCtrl',function ($scope,$location,  $http, $stateParams, Auth, User) {  
+  .controller('ProductViewCtrl',function ($state, $scope,$location,  $http, $stateParams, Auth, User) {  
 
       $scope.product = '';
 
-
+      $scope.actionScope = "Edit";
+      $scope.isReadOnly = true;
       $http.get('/api/products/' + $stateParams.id).success(function(product) {
           $scope.product = product;
-          $scope.actionScope = "Edit";
       });
   
       $scope.cancel = function() {
-       $location.path('/product');
+        $state.go('product');
       }; 
       
       $scope.updateProduct = function() {
-        $location.path('/product/'+$scope.product._id+'/edit');
-        $scope.edit = false;
-
-    };    
+        $scope.isReadOnly = false;
+        $state.go('editProduct',{id: $scope.product._id});
+      };    
      
-  }).controller('ProductCreateController',function($scope,$state,$http,$stateParams, $location,Notification, dialogs){
+  }).controller('ProductCreateController',function($state, $scope,$http,$stateParams, $location,Notification, dialogs){
 
     $scope.product= {};
+    $scope.actionScope = "Create";
 
     $scope.addProduct = function(){
       var productName = $scope.product.name;
-      var dlg = dialogs.confirm();
+      var dlg = dialogs.confirm("Alert", "Please confirm creating the product " + productName);
+      
+ 
        dlg.result.then(function(btn){
          $http.post('/api/products', $scope.product).success(function(product, $state) {
+            $state.go('product');
              Notification.success({message: 'Product ' + productName + ' created', title: 'Create operation'});
-             $location.path('/product');
         })
        },function(btn){
+            $state.go('product');
             Notification.success({message: 'Product ' + productName + ' create cancelled', title: 'Create operation'});
        });
         
         };
     
     $scope.cancel = function() {
-      $location.path('/product');
+      $state.go('product');
       Notification.success({message: 'Product create cancelled', title: 'Create operation'});
     }
 
-  }).controller('ProductEditCtrl',function ($scope, $state, $http,  $location, $stateParams, Auth, User) {  
+  }).controller('ProductEditCtrl',function ($state, $scope,  $http,  $location, $stateParams, Auth, User, Notification, dialogs) {  
 
    $scope.product = '';
 
    
 
    $scope.updateProduct = function(){
-        
-        $http.put('/api/products/' + $stateParams.id, $scope.product).success(function(product, $state) {
-           // $location.path('/product');
-        }
-    )};
+       
+        var dlg = dialogs.confirm();
+       dlg.result.then(function(btn){
+           
+            $http.put('/api/products/' + $stateParams.id, $scope.product).success(function(product, $state) {
+                Notification.success({message: 'Product ' + $scope.product.name + ' Updated', title: 'Update operation'});
+            })           
+            $state.go('viewProduct',{id: $scope.product._id});
+
+       },function(btn){
+            Notification.success({message: 'Product ' + $scope.product.name + ' Update cancelled', title: 'Update operation'});
+       });      
+     };
 
     $scope.loadProduct = function(){
-          $http.get('/api/products/' + $stateParams.id).success(function(product) {
+      $scope.actionScope = "Save";
+      $http.get('/api/products/' + $stateParams.id).success(function(product) {
           $scope.product = product;
-          $scope.actionScope = "Save";
-      });
+      })
     };
 
     $scope.loadProduct();
     
     $scope.cancel = function() {
         $http.get('/api/products/' + $stateParams.id).success(function(product) {
-           $location.path('/product/'+product._id+'/view');
-      });
+            
+        })
+      $state.go('viewProduct',{id: $scope.product._id});
     };
 
     

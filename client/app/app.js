@@ -11,7 +11,8 @@ angular.module('meanordersApp', [
   'ui.grid.pagination',
   'ui.grid.selection',
   'ui-notification',
-  'dialogs.main'
+  'dialogs.main',
+  'dialogs.default-translations'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
