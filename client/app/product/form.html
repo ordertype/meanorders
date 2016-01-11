@@ -7,7 +7,19 @@
 <div class="form-group">
   <label for="description" class="col-sm-2 control-label">Description</label>
   <div class="col-sm-3">
-    <input type="text" ng-model="product.info" class="form-control" id="description" placeholder="Product Description goes here" ng-readonly="isReadOnly"/>
+    <input type="text" ng-model="product.description" class="form-control" id="description" placeholder="Product Description goes here" ng-readonly="isReadOnly"/>
+  </div>
+</div>
+<div class="form-group">
+  <label for="price" class="col-sm-2 control-label">Price</label>
+  <div class="col-sm-3">
+    <input type="text" ng-model="product.price" class="form-control" id="price" placeholder="Product price goes here" ng-readonly="isReadOnly"/>
+  </div>
+</div>
+<div class="form-group">
+  <label for="lastUpdate" class="col-sm-2 control-label">Last Update</label>
+  <div class="col-sm-3">
+    <input type="text" ng-model="product.lastUpdate" class="form-control" id="lastUpdate" placeholder="Last update for the Product" ng-readonly="true"/>
   </div>
 </div>
 <div class="form-group">
