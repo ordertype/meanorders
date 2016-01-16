@@ -6,9 +6,9 @@ var mongoose = require('mongoose'),
 var ProductSchema = new Schema({
   name:  { type: String, required: true, trim: true },
   description:  { type: String, trim: true },
-  price:  {type: Number, get: getPrice, set: setPrice }, 
+  price:  {type: Number, default:0, get: getPrice, set: setPrice }, 
   lastUpdate  :  { type: Date, default: Date.now },
-  active: Boolean
+  active :  { type: Boolean, default: true },
 });
 
 function getPrice(num){

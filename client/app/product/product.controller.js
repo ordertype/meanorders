@@ -26,16 +26,18 @@ angular.module('meanordersApp')
             width: "15%",
             field: 'price' },   
         { name: 'Last Update',
+            cellClass: 'grid-align-center', 
             headerCellClass: 'grid-align-center', 
-            cellFilter: 'datetime',                   
-            field: 'lastUpdate' },                       
+            field: 'lastUpdate',
+            cellFilter: 'date'},                       
         { name: 'Actions',
-            cellClass: 'grid-align-center',
-            headerCellClass: 'grid-align-center',            
+            cellClass: 'grid-align-center', 
+            headerCellClass: 'grid-align-center',                       
             enableColumnMenu: false,
             enableFiltering: false,
             enableSorting: false,
-            cellTemplate:'<button class="btn btn-primary" ng-click="grid.appScope.viewProduct(row.entity)">View</button> <button class="btn btn-danger" ng-click="grid.appScope.deleteProduct(row)">Delete</button>' }
+            cellTemplate:'<button class="btn btn-primary" ng-click="grid.appScope.viewProduct(row.entity)">View</button> <button class="btn btn-danger" ng-click="grid.appScope.deleteProduct(row)">Delete</button>' 
+        }
       ],
       onRegisterApi: function( gridApi ) {
         $scope.grid1Api = gridApi;
@@ -72,7 +74,8 @@ angular.module('meanordersApp')
 
       $scope.product = '';
 
-      $scope.actionScope = "Edit";
+      $scope.submitButton = "Edit";
+      $scope.secondButton = "Return";     
       $scope.isReadOnly = true;
       $http.get('/api/products/' + $stateParams.id).success(function(product) {
           $scope.product = product;
@@ -90,8 +93,8 @@ angular.module('meanordersApp')
   }).controller('ProductCreateController',function($state, $scope,$http,$stateParams, $location,Notification, dialogs){
 
     $scope.product= {};
-    $scope.actionScope = "Create";
-
+    $scope.submitButton = "Create";
+    $scope.secondButton = "Cancel";     
     $scope.addProduct = function(){
       var productName = $scope.product.name;
       var dlg = dialogs.confirm("Alert", "Please confirm creating the product " + productName);
@@ -136,7 +139,8 @@ angular.module('meanordersApp')
      };
 
     $scope.loadProduct = function(){
-      $scope.actionScope = "Save";
+      $scope.submitButton = "Save";
+      $scope.secondButton = "Cancel";           
       $http.get('/api/products/' + $stateParams.id).success(function(product) {
           $scope.product = product;
       })

@@ -13,7 +13,7 @@
 <div class="form-group">
   <label for="price" class="col-sm-2 control-label">Price</label>
   <div class="col-sm-3">
-    <input type="text" ng-model="product.price" class="form-control" id="price" placeholder="Product price goes here" ng-readonly="isReadOnly"/>
+    <input type="number"  step="0.01" value="0.00" placeholder="0.00" ng-model="product.price" class="form-control" id="price" placeholder="Product price goes here" ng-readonly="isReadOnly"/>
   </div>
 </div>
 <div class="form-group">
@@ -24,7 +24,7 @@
 </div>
 <div class="form-group">
   <div class="col-sm-offset-2 col-sm-3">
-    <input type="submit" id="submit" class="btn btn-primary" value="{{actionScope}}"/>
-    <input type="button" class="btn btn-info" ng-click="cancel()" value="Cancel"/>
+    <input type="submit" id="submit" class="btn btn-primary" value="{{submitButton}}"/>
+    <input type="button" id="cancel" class="btn btn-info" ng-click="cancel()" value="{{secondButton}}"/>
   </div>
 </div>
