@@ -13,7 +13,10 @@ angular.module('meanordersApp')
       infiniteScrollDown: true,
       rowHeight: 40,
       columnDefs: [
-        { name: 'Product',
+        { name: 'SKU',
+            headerCellClass: 'grid-align-center',
+            field: 'sku' },
+        { name: 'Name',
             headerCellClass: 'grid-align-center',
             field: 'name' },
         { name: 'Description',

@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var ProductSchema = new Schema({
+  sku:  { type: String, required: true, trim: true },  
   name:  { type: String, required: true, trim: true },
   description:  { type: String, trim: true },
   price:  {type: Number, default:0, get: getPrice, set: setPrice }, 
@@ -11,12 +12,12 @@ var ProductSchema = new Schema({
   active :  { type: Boolean, default: true },
 });
 
-function getPrice(num){
-    return (num/100).toFixed(2);
+function getPrice(price){
+    return price/100*2;
 }
 
-function setPrice(num){
-    return num*100;
+function setPrice(price){
+    return price*100;
 }
 
 module.exports = mongoose.model('Product', ProductSchema);

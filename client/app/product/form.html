@@ -1,4 +1,10 @@
 <div class="form-group">
+  <label for="sku" class="col-sm-2 control-label">Sku</label>
+  <div class="col-sm-3">
+    <input type="text" ng-model="product.sku" class="form-control" id="sku" placeholder="Product SKU Here" ng-readonly="isReadOnly"/>
+  </div>
+</div>
+<div class="form-group">
   <label for="name" class="col-sm-2 control-label">Name</label>
   <div class="col-sm-3">
     <input type="text" ng-model="product.name" class="form-control" id="name" placeholder="Product Name Here" ng-readonly="isReadOnly"/>
