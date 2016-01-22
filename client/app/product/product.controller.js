@@ -107,6 +107,9 @@ angular.module('meanordersApp')
          $http.post('/api/products', $scope.product).success(function(product, $state) {
             $state.go('product');
              Notification.success({message: 'Product ' + productName + ' created', title: 'Create operation'});
+        }).error(function(data, status, headers, config) {
+             Notification.error({message: 'Product ' + productName + ' was not created', title: 'Create operation'});
+             Notification.error({message: 'Error: ' + data.err, title: 'Create operation'});  
         })
        },function(btn){
             $state.go('product');
